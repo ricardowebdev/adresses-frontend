@@ -29,17 +29,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
 });
 
 function getAdresses() {
-    sendRequest(`${baseBackend}address`, "GET", feedTable);
+    sendRequest(`${baseBackend}mongo/address`, "GET", feedTable);
 }
 
 function getAddress(id) {
     clearForm();
     editId.value = id;
-    sendRequest(`${baseBackend}address/${id}`, "GET", feedFormBackend);
+    sendRequest(`${baseBackend}mongo/address/${id}`, "GET", feedFormBackend);
 }
 
 function confirmDelete() {
-    sendRequest(`${baseBackend}address/${deleteId.value}`, "DELETE", getAdresses, null, true);
+    sendRequest(`${baseBackend}mongo/address/${deleteId.value}`, "DELETE", getAdresses, null, true);
 }
 
 function FeedStates(response) {
@@ -177,8 +177,8 @@ function sendForm() {
     });
 
     editId.value 
-        ? sendRequest(`${baseBackend}address/${editId.value}`, "PUT", getAdresses, form, true)
-        : sendRequest(`${baseBackend}address`, "POST", getAdresses, form, true);
+        ? sendRequest(`${baseBackend}mongo/address/${editId.value}`, "PUT", getAdresses, form, true)
+        : sendRequest(`${baseBackend}mongo/address`, "POST", getAdresses, form, true);
 
     clearValidations();
     clearForm();
