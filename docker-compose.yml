@@ -1,0 +1,16 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - SERVER_NAME=meusenderecos.com.br
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./certs:/etc/nginx/ssl
