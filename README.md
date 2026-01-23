@@ -1,14 +1,15 @@
 ## 🚀 Adresses frontend
-Este projeto tem como finalizade apenas demonstrar de forma básica um frontend que consome uma api externa no caso o viacep buscando informações de endereços nacionais
-podendo ser registrados e consultados posteriormente em uma base de dados.
-Para que seu layout não fosse completamente simples integrei apenas o CSS do bootstrap
+Objetivos deste projeto:
+1 - Demonstração básica do uso de VUE3 como normalmente programo um sistema mais ou menos, porém de forma básica sem routeguard, sessão de usuario entre outros recursos mais
+2 - Criei uma aplicação onde o usuario pode cadastar um novo endereço digitando seu cep, consumindo os dados automaticos do viacep e posteriormente enviando estes dados para o backend, também há uma pequena parte onde consumo os logs de erros e informações decorridas no sistema durante seu uso, o sistema possui filtros, paginação, export de dados para excel e etc.
 
 ## 🧰 Tecnologias Utilizadas
-- HTML
+- Vue3
+- Vuetify
 - Nginx
 - Docker / Docker Compose
 - SSL / TLS
-- Javascript puro
+- Typescript
 
 ## 🐳 Docker & Ambiente
 O projeto já está dockerizado, permitindo execução consistente em:
