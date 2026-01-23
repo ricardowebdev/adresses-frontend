@@ -1,6 +1,8 @@
 ## 🚀 Adresses frontend
 Objetivos deste projeto:
+
 1 - Demonstração básica do uso de VUE3 como normalmente programo um sistema mais ou menos, porém de forma básica sem routeguard, sessão de usuario entre outros recursos mais
+
 2 - Criei uma aplicação onde o usuario pode cadastar um novo endereço digitando seu cep, consumindo os dados automaticos do viacep e posteriormente enviando estes dados para o backend, também há uma pequena parte onde consumo os logs de erros e informações decorridas no sistema durante seu uso, o sistema possui filtros, paginação, export de dados para excel e etc.
 
 ## 🧰 Tecnologias Utilizadas
