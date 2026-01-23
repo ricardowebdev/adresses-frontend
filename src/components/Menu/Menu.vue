@@ -3,7 +3,7 @@
         <v-row align="start">
             <v-col class="v-col-9">
                 <button @click="navigateUrl()">
-                    <img alt="Enderecos Logo" class="logo mr-4" src="@/assets/logo.png" width="70" height="70" @click="navigateUrl()" />
+                    <img alt="Enderecos Logo" class="logo mr-4" src="@/assets/images/logo.png" width="70" height="70" @click="navigateUrl()" />
                 </button>
 
                 <button @click="navigateUrl()">
@@ -46,7 +46,7 @@
     import router from '@/router';
     import Endereco from '@/assets/images/enderecos.png';
     import Log from '@/assets/images/logs.png';
-    import Mapa from '@/assets/images/mapa.png';
+    import Mapa from '@/assets/images/maps.png';
 
     export default defineComponent({
         name: 'Menu',
@@ -87,7 +87,7 @@
                     id: 2,
                     modulo: "Mapa",
                     image: Mapa,
-                    rota: "/mapa",
+                    rota: "/mapas",
                 });                
 
                 return modulos;

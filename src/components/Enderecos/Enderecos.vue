@@ -13,19 +13,62 @@
                             <span class="material-icons md-16 black">search</span>
                             <b>Buscar</b>
                         </v-btn>
-                        <v-btn size="small" color="#f5c21f" @click="$router.push('/endereco')" v-show="canAdd">
+                        <v-btn size="small" color="#f5c21f" @click="$router.push('/endereco')">
                             <span class="material-icons md-16 black">add</span>
                             <b>Adicionar</b>
-                        </v-btn>                        
-                        <v-text-field 
-                            label="Busca"
-                            v-model="searchText"
-                            variant="underlined"
-                            class="mr-2"
-                            @keypress.enter="search()"
-                            @keyup="filterLocal()"></v-text-field>
+                        </v-btn>
+                        <v-btn size="small" color="success" class="mr-2" @click="excel()"> 
+                            <span class="material-icons md-16">table_view</span>
+                            <b>Excel</b>
+                        </v-btn>                            
                     </v-col>
                 </v-row>
+
+                <v-row justify="space-around" class="mb-3" no-gutters>
+                    <v-col cols="12" md="6" sm="12">
+                        <v-text-field 
+                            label="CEP"
+                            v-model="cep"
+                            variant="underlined"
+                            @keypress.enter="search()"
+                            @keyup="filterLocal()"
+                            class="pr-3 pl-3">
+                        </v-text-field>
+                    </v-col>
+                    <v-col cols="12" md="6" sm="12">
+                        <v-text-field 
+                            label="UF"
+                            v-model="uf"
+                            variant="underlined"
+                            @keypress.enter="search()"
+                            @keyup="filterLocal()"
+                            class="pr-3 pl-3">
+                        </v-text-field>
+                    </v-col>
+                </v-row>
+                <v-row justify="space-around" no-gutters>
+                    <v-col cols="12" md="6" sm="12">
+                        <v-text-field 
+                            label="Cidade"
+                            v-model="cidade"
+                            variant="underlined"
+                            @keypress.enter="search()"
+                            @keyup="filterLocal()"
+                            class="pr-3 pl-3">
+                        </v-text-field>
+                    </v-col>
+                    <v-col cols="12" md="6" sm="12">
+                        <v-text-field 
+                            label="Logradouro"
+                            v-model="logradouro"
+                            variant="underlined"
+                            @keypress.enter="search()"
+                            @keyup="filterLocal()"
+                            class="pr-3 pl-3">
+                        </v-text-field>
+                    </v-col>                        
+                </v-row>
+                <hr class="mb-5"/>
 
                 <v-row justify="center" class="mb-3" no-gutters>
                     <v-container class="d-flex align-center flex-row container-control no-padding">
@@ -34,11 +77,11 @@
                             items-per-page="15"
                             items-per-page-text="Itens por pagina">
                             <template v-slot:item.acoes="{ item }">
-                                <v-btn size="x-small" color="#f5c21f" class="ml-2" @click="setEdit(item)" v-show="canEdit">
+                                <v-btn size="x-small" color="#f5c21f" class="ml-2" @click="setEdit(item)">
                                     <span class="material-icons md-16 black">edit</span>
                                     <b>Editar</b>
                                 </v-btn>
-                                <v-btn size="x-small" color="#000000" class="ml-2 white" @click="setDelete(item)" v-show="canDelete">
+                                <v-btn size="x-small" color="#000000" class="ml-2 white" @click="setDelete(item)">
                                     <span class="material-icons md-16" >delete</span>
                                     <b>Excluir</b>
                                 </v-btn>

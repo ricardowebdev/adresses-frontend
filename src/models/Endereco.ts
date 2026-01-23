@@ -28,10 +28,10 @@ export class ValidateEndereco {
         if (!valida) return;
 
         if (endereco.cep == "") {
-            this.msgNome += "Cep é requerido";
+            this.msgCep += "Cep é requerido";
             this.valid = false;
         } else if (endereco.cep.length < 8) {
-            this.msgNome += "Cep deve ter no minimo 8 digitos";
+            this.msgCep += "Cep deve ter no minimo 8 digitos";
             this.valid = false;
         }
 

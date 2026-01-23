@@ -13,8 +13,10 @@
                         <v-text-field 
                             variant="underlined"
                             v-model="endereco.cep"
-                            label="Cep"
+                            label="Cep *"
                             @focusout="getAddress(endereco.cep)"
+                            :error="validaEndereco.msgCep ? true : false"
+                            :error-messages="validaEndereco.msgCep"
                             maxlength="10" />
                     </v-col>
 
@@ -107,7 +109,7 @@
             </v-row>
 
             <v-row justify="center" no-gutters class="mt-6">
-                <v-btn color="#cecece" class="mr-2" @click="$router.push('/clientes')">
+                <v-btn color="#cecece" class="mr-2" @click="$router.push('/')">
                     <span class="material-icons md-16 black">cancel</span>
                     <b>Cancelar</b>
                 </v-btn>

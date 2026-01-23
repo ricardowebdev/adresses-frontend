@@ -99,6 +99,9 @@ export default defineComponent({
             }
         },
         async getAddress(cep: any) {
+            if (cep == null || cep.length < 8) {
+                return;
+            }
             await viaCepService.get(cep)
                 .then((response: any) => {
                     console.log(response.data);
@@ -123,7 +126,7 @@ export default defineComponent({
             this.msg = msg;
             this.type = type;
             this.time = time ? time : 3000; 
-            this.callBack = callBack ? '/enderecos' : '';    
+            this.callBack = callBack ? '/' : '';    
             this.showLoader = false;
         },
         clearAlert() {

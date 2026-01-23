@@ -4,7 +4,6 @@ import { Log } from '@/models/Log'
 import HandleErrorResponse from '@/helpers/HandleErrorResponse';
 import Alert from '@/components/Alert/Alert.vue';
 import Loader from '@/components/Loader/Loader.vue';
-import { permissible } from '@/services/PermissibleService';
 
 export default defineComponent({
     name: 'LogDetalhes',
@@ -25,9 +24,6 @@ export default defineComponent({
         }
     },
     created() {
-        if (!permissible.hasPermission(permissible.LISTAR_LOGS))
-            this.$router.push('/dashboard');
-
         this.id = this.$route.params.id || 0;
         if (this.id)
             this.findLog();

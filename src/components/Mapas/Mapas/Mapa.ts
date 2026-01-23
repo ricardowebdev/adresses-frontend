@@ -13,7 +13,7 @@ import { GoogleMap, Marker, MarkerCluster,CustomControl, InfoWindow } from "vue3
 export default defineComponent({
     name: 'LogDetalhes',
     components: {
-        Alert, Loader, GoogleMap, Marker, MarkerCluster,CustomControl, InfoWindow, Doughnut
+        Alert, Loader, GoogleMap, Marker, MarkerCluster,CustomControl, InfoWindow
     },
     data() {
         return {
@@ -50,7 +50,7 @@ export default defineComponent({
         }
     },
     created: async function() {
-        this.id = this.$route.query.chave_id?.toString() || '';
+        this.id = this.$route.query.id?.toString() || '';
         this.getEnderecos();
     },
     methods: {
@@ -73,7 +73,7 @@ export default defineComponent({
                     this.showMap = true;
                 } else {
                     this.showMap = false;
-                    const msg = (response.data && response.data.message) ? response.data.message : "Nenhuma chave encontrada";
+                    const msg = (response.data && response.data.message) ? response.data.message : "Nenhuma endereço encontrado";
                     this.setAlert(msg, "warning", false);
                 }
             } catch (error: any) {
@@ -85,14 +85,14 @@ export default defineComponent({
             }
         },
         async showKeyDetails(endereco: Endereco) {            
-            this.selectedLocation = endereco;
+            this.endereco = endereco;
             this.showLoader = true;
         },
         setAlert(msg: string, type: string, callBack?: boolean, time?: number) {
             this.msg = msg;
             this.type = type;
             this.time = time ? time : 3000;
-            this.callBack = callBack ? '/dashboard' : '';
+            this.callBack = callBack ? '/' : '';
             this.showLoader = false;
         },
         clearAlert() {

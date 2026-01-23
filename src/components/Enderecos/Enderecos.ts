@@ -24,14 +24,25 @@ export default defineComponent({
             time: 0 as number,
             callBack: '' as string,
             showLoader: false,
-            canEdit: false,
-            canDelete: false,
-            canAdd: false,
+            cep: "" as string,
+            uf: "" as string,
+            cidade: "" as string,
+            logradouro: "" as string,
         }
     },
     created() {
         this.getEnderecos();
         this.originalEnderecos = this.enderecos;
+    },
+    computed: {
+        enderecosPayload() {
+            return {
+                cep: this.cep,
+                uf: this.uf,
+                cidade: this.cidade,
+                logradouro: this.logradouro,
+            };
+        }
     },
     methods: {
         setDelete(endereco: Endereco|any): void {
@@ -44,7 +55,7 @@ export default defineComponent({
         },
         async getEnderecos() {
             this.showLoader = true;
-            await enderecoService.getAll()
+            await enderecoService.getAll(this.enderecosPayload)
                 .then((response: any) => {
                     if (response.data.status === "success") {
                         this.enderecos = this.formatEnderecos(response.data.data);
@@ -73,6 +84,9 @@ export default defineComponent({
                     this.enderecos = [];
                     this.originalEnderecos = this.enderecos;
                 });
+        },
+        excel() {
+            enderecoService.excel(this.enderecosPayload);
         },
         search() {
             this.getEnderecos();

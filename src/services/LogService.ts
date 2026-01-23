@@ -3,11 +3,11 @@ import { BaseService } from './BaseService';
 
 class LogService extends BaseService {    
     getAll(): Promise<any> {
-        return axios.get(this.url + '/logs', super.mountHeaders());
+        return axios.get(this.url + '/logs');
     }
 
     show(id: number): Promise<any> {
-        return axios.get(`${this.url}/logs/${id}`, super.mountHeaders());
+        return axios.get(`${this.url}/logs/${id}`);
     }
 }
 
