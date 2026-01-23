@@ -3,7 +3,7 @@ import UnauthorizedErrorResponse from '@/helpers/UnauthorizedErrorResponse';
 
 
 export class BaseService {
-    protected url = 'http://192.168.1.141/api';
+    protected url = 'http://192.168.1.121/api';
 
     formatGetParams(params: any) {
         let urlParams = "";

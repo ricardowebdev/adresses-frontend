@@ -13,11 +13,11 @@
                             <span class="material-icons md-16 black">search</span>
                             <b>Buscar</b>
                         </v-btn>
-                        <v-btn size="small" color="#f5c21f" @click="$router.push('/endereco')">
+                        <v-btn size="small" color="#f5c21f" class="mr-2" @click="$router.push('/endereco')">
                             <span class="material-icons md-16 black">add</span>
                             <b>Adicionar</b>
                         </v-btn>
-                        <v-btn size="small" color="success" class="mr-2" @click="excel()"> 
+                        <v-btn size="small" color="success" @click="excel()"> 
                             <span class="material-icons md-16">table_view</span>
                             <b>Excel</b>
                         </v-btn>                            

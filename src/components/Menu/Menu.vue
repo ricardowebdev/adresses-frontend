@@ -83,12 +83,12 @@
                     image: Log,
                     rota: "/logs",
                 });
-                modulos.push({ 
-                    id: 2,
-                    modulo: "Mapa",
-                    image: Mapa,
-                    rota: "/mapas",
-                });                
+                // modulos.push({ 
+                //     id: 2,
+                //     modulo: "Mapa",
+                //     image: Mapa,
+                //     rota: "/mapas",
+                // });                
 
                 return modulos;
             },

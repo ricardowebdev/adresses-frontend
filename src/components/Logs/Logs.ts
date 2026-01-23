@@ -54,7 +54,6 @@ export default defineComponent({
         },
         filterItems(arr: Array<any>, query: String) {
             return arr.filter((el) => 
-                el.usuario.toLowerCase().includes(query.toLowerCase()) ||
                 el.tipo.toLowerCase().includes(query.toLowerCase()) ||
                 el.acao.toLowerCase().includes(query.toLowerCase()) ||
                 el.created_at.toLowerCase().includes(query.toLowerCase())
@@ -82,7 +81,6 @@ export default defineComponent({
             logs.forEach((log) => {
                 logsFormatados.push({
                     'id': log.id,
-                    'usuario': log.usuario,
                     'tipo': log.tipo,
                     'data': log.created_at,
                     'metodo': log.acao,
